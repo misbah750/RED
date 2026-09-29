@@ -2,6 +2,8 @@ import React from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
 import Newsletter from '../components/Newsletter.jsx';
+import MediaBand from '../components/MediaBand.jsx';
+import Countdown from '../components/Countdown.jsx';
 
 const CAL = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=RED%20Book%20Launch%20%E2%80%94%20Resuscitation%20in%20the%20Emergency%20Department&dates=20261103/20261104&details=Launch%20of%20Resuscitation%20in%20the%20Emergency%20Department%20(RED).%20Time%20and%20venue%20to%20be%20confirmed.';
 
@@ -11,6 +13,14 @@ export default function Events({ cd, launched }) {
       <PageIntro eyebrow="Events" title={<>Events, <em>coming soon.</em></>}>
         The book launch is the first RED event. Workshops, simulation days and webinars will follow and be listed here.
       </PageIntro>
+
+      <MediaBand
+        src="/scene-corridor.jpg"
+        kicker="The first RED event"
+        caption="When seconds matter, preparation becomes survival."
+        alt="Emergency team rushing a patient on a stretcher through a hospital corridor"
+      />
+
       <section aria-label="Launch">
         <div className="wrap">
           <Reveal className="event glass-2">
@@ -23,15 +33,7 @@ export default function Events({ cd, launched }) {
                 <dt>Time</dt><dd>To be confirmed</dd>
                 <dt>Venue</dt><dd>To be confirmed</dd>
               </dl>
-              {!launched && (
-                <div className="countdown" style={{ marginTop: '1.2rem' }}>
-                  <div className="cd glass"><b className="cd-num">{cd.d}</b><span>days</span></div>
-                  <span className="cd-sep">:</span>
-                  <div className="cd glass"><b className="cd-num">{String(cd.h).padStart(2, '0')}</b><span>hours</span></div>
-                  <span className="cd-sep">:</span>
-                  <div className="cd glass"><b className="cd-num">{String(cd.m).padStart(2, '0')}</b><span>minutes</span></div>
-                </div>
-              )}
+              {!launched && <Countdown cd={cd} className="cd-compact" />}
             </div>
             <div className="acts">
               <a className="btn btn-red" href="#join"><span>Get launch updates</span></a>

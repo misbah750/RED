@@ -1,6 +1,7 @@
 import React from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
+import MediaBand from '../components/MediaBand.jsx';
 import { programs } from '../data.js';
 
 export default function Program() {
@@ -10,9 +11,17 @@ export default function Program() {
         RED is being developed as a continuing platform for resuscitation education, moving from reading to rehearsal.
         Programs are in preparation and will be announced here.
       </PageIntro>
+
+      <MediaBand
+        src="/band-airway.jpg"
+        kicker="From reading to rehearsal"
+        caption="Turning evidence into performance."
+        alt="Hands-on resuscitation skills: airway, IV access, ultrasound, defibrillation and monitoring"
+      />
+
       <section aria-label="Programs">
         <div className="wrap">
-          <Reveal className="soon-badge glass"><span className="live-dot" /> In development</Reveal>
+          <Reveal className="soon-badge glass"><span className="live-dot" /> Coming soon</Reveal>
           <div className="programs" style={{ marginTop: '1.6rem' }}>
             {programs.map((p, i) => (
               <Reveal className="prog glass" delay={(i % 3) + 1} key={p.t}>

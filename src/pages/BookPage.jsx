@@ -4,6 +4,7 @@ import Reveal from '../components/Reveal.jsx';
 import Book3D from '../components/Book3D.jsx';
 import InsideBook from '../components/InsideBook.jsx';
 import OrderBook from '../components/OrderBook.jsx';
+import MediaBand from '../components/MediaBand.jsx';
 
 export default function BookPage({ launched }) {
   const pointer = useRef(null);
@@ -37,6 +38,13 @@ export default function BookPage({ launched }) {
           <Reveal delay={2} variant="right"><Book3D pointer={pointer} /></Reveal>
         </div>
       </section>
+
+      <MediaBand
+        src="/scene-resus.jpg"
+        kicker="Written for the moment it matters"
+        caption="From early deterioration to post-resuscitation care."
+        alt="Emergency clinicians resuscitating a critically ill patient"
+      />
 
       <InsideBook />
       <OrderBook launched={launched} />

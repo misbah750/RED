@@ -1,15 +1,11 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import Book3D from './Book3D.jsx';
 import Magnetic from './Magnetic.jsx';
+import Countdown from './Countdown.jsx';
 import { usePrefersReducedMotion } from '../hooks.js';
-import { heroCallouts } from '../data.js';
 
 const HERO_VIDEO = (typeof window !== 'undefined' && window.__HERO_VIDEO__) || '/hero.mp4';
 const HERO_POSTER = (typeof window !== 'undefined' && window.__HERO_POSTER__) || '/poster.jpg';
-
-function Cell({ v, label, pad }) {
-  return <div className="cd glass"><b className="cd-num">{pad ? String(v).padStart(2, '0') : String(v)}</b><span>{label}</span></div>;
-}
 
 export default function Hero({ cd }) {
   const pointer = useRef(null);
@@ -78,18 +74,6 @@ export default function Hero({ cd }) {
 
         <div className="hero-orbit anim d4">
           <Book3D pointer={pointer} />
-          <ul className="callouts" aria-label="What RED covers">
-            {heroCallouts.map((c, i) => (
-              <li className={`callout co${i + 1}`} style={{ '--i': i }} key={c.t}>
-                <span className="callout-ic" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d={c.icon} />
-                  </svg>
-                </span>
-                <span className="callout-t">{c.t}</span>
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div className="hero-actions anim d5">
@@ -98,14 +82,8 @@ export default function Hero({ cd }) {
             <Magnetic className="btn btn-glass" href="#/events"><span>Book launch 2026</span></Magnetic>
           </div>
           <div className="cd-wrap">
-            <p className="cd-label"><span className="live-dot" /> Book launch, 03 November 2026</p>
-            <div className="countdown" aria-live="polite">
-              <Cell v={cd.d} label="days" />
-              <span className="cd-sep">:</span>
-              <Cell v={cd.h} label="hours" pad />
-              <span className="cd-sep">:</span>
-              <Cell v={cd.m} label="minutes" pad />
-            </div>
+            <p className="cd-label"><span className="live-dot" /> Counting down to launch · 03 November 2026</p>
+            <Countdown cd={cd} />
           </div>
         </div>
       </div>

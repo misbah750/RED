@@ -1,6 +1,8 @@
 import React from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
+import MediaBand from '../components/MediaBand.jsx';
+import Scene from '../components/Scene.jsx';
 import { asset } from '../assets.js';
 import { clinicalAreas, foundations } from '../data.js';
 
@@ -40,10 +42,18 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <MediaBand
+        src="/band-ecg.jpg"
+        kicker="Foundations to frontline crises"
+        caption="One continuous, physiology-driven process."
+        alt="Resuscitation imagery: defibrillation, airway, ultrasound, blood products and monitoring with an ECG trace"
+      />
+
       <section aria-labelledby="human-title">
-        <div className="wrap why">
-          <h2 id="human-title">The human side of <em>resuscitation.</em></h2>
-          <div>
+        <div className="wrap feature">
+          <Scene className="feature-media" src="/scene-team.jpg" alt="Resuscitation team working together under pressure" />
+          <div className="feature-copy">
+            <h2 id="human-title">The human side of <em>resuscitation.</em></h2>
             <p>The most difficult resuscitations are rarely solved by knowledge alone. They require clinicians to lead
               under pressure, communicate clearly, recognise changing trajectories, distribute tasks, manage cognitive
               overload, and adapt when the original plan is no longer working.</p>
@@ -60,7 +70,7 @@ export default function AboutPage() {
             <div>
               <span className="eyebrow"><svg viewBox="0 0 34 14" aria-hidden="true"><polyline points="0,7 10,7 13,1 17,13 20,7 34,7" fill="none" stroke="currentColor" strokeWidth="2" /></svg>About the author</span>
               <h2 id="author-title">Dr Shahan Waheed</h2>
-              <p className="author-cred">Associate Professor of Emergency Medicine, Aga Khan University Hospital · Section Head, Adult Emergency Medicine</p>
+              <p className="author-cred">Associate Professor of Emergency Medicine</p>
               <p>Dr Shahan Waheed is a Fellow of the College of Physicians and Surgeons Pakistan in Emergency Medicine,
                 holds a PhD in Clinical Sciences, and is a Fellow of the Higher Education Academy. He is a Certified
                 Emergency Department Executive and General Secretary of the Pakistan Society of Emergency Medicine.</p>

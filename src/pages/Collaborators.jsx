@@ -2,6 +2,7 @@ import React from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal, { Eyebrow } from '../components/Reveal.jsx';
 import Globe from '../components/Globe.jsx';
+import Scene from '../components/Scene.jsx';
 import { countries } from '../data.js';
 import { useCountUp } from '../hooks.js';
 
@@ -46,9 +47,10 @@ export default function Collaborators() {
       </section>
 
       <section aria-labelledby="systems-title">
-        <div className="wrap why">
-          <h2 id="systems-title">Reliable systems over <em>unlimited technology.</em></h2>
-          <div>
+        <div className="wrap feature feature-rev">
+          <Scene className="feature-media" src="/scene-or.jpg" alt="Emergency team resuscitating a patient under theatre lights" />
+          <div className="feature-copy">
+            <h2 id="systems-title">Reliable systems over <em>unlimited technology.</em></h2>
             <p>Rather than assuming that high-quality resuscitation depends on unlimited technology, RED emphasises
               reliable systems, trained people, thoughtful preparation, adaptability and disciplined execution.</p>
             <p className="pull glass">Written for emergency care <span>across different health systems.</span></p>

@@ -3,6 +3,8 @@ import Hero from '../components/Hero.jsx';
 import Principles from '../components/Principles.jsx';
 import Newsletter from '../components/Newsletter.jsx';
 import PulseDivider from '../components/PulseDivider.jsx';
+import MediaBand from '../components/MediaBand.jsx';
+import Scene from '../components/Scene.jsx';
 import Reveal, { Eyebrow } from '../components/Reveal.jsx';
 import { questions } from '../data.js';
 
@@ -36,9 +38,30 @@ export default function Home({ cd }) {
         </div>
       </section>
 
-      <PulseDivider />
+      <MediaBand
+        src="/band-airway.jpg"
+        kicker="From recognition to definitive care"
+        caption="Science. Systems. Skills. When seconds matter."
+        alt="Emergency resuscitation modalities: defibrillation, airway management, IV access, point-of-care ultrasound and monitoring"
+      />
 
       <Principles />
+
+      <section aria-labelledby="bay-title">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <Eyebrow>Inside the resuscitation bay</Eyebrow>
+            <h2 id="bay-title">Where seconds decide <em>outcomes.</em></h2>
+            <p>Real resuscitation is physiology, teamwork and disciplined action under pressure, captured in the
+              moments that decide whether a patient recovers.</p>
+          </Reveal>
+          <div className="scene-grid">
+            <Scene className="scene-tall" src="/scene-cpr.jpg" alt="Resuscitation team performing chest compressions" />
+            <Scene src="/scene-monitor.jpg" alt="Clinician managing the airway with vital-sign monitor readouts" />
+            <Scene src="/scene-or.jpg" alt="Emergency team resuscitating a patient under theatre lights" />
+          </div>
+        </div>
+      </section>
 
       <PulseDivider />
 
@@ -61,6 +84,18 @@ export default function Home({ cd }) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section aria-label="From the editor of RED">
+        <div className="wrap">
+          <Reveal className="quote-banner">
+            <img
+              src="/author-quote.jpg"
+              alt="Dr Shahan Waheed: Resuscitation in the Emergency Department equips every emergency clinician with the practical framework, confidence, and clarity needed when minutes matter and every decision can change an outcome."
+              loading="lazy"
+            />
+          </Reveal>
         </div>
       </section>
 

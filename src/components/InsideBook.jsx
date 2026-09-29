@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Reveal, { Eyebrow } from './Reveal.jsx';
 import Ticker from './Ticker.jsx';
-import { parts, audience, bookTopics } from '../data.js';
+import { parts, bookTopics } from '../data.js';
 import { useCountUp, useTilt, useReveal } from '../hooks.js';
 
 function Stat({ n, label }) {
@@ -95,11 +95,6 @@ export default function InsideBook({ cta = { label: 'Discover the book', href: '
           <Stat n={27} label="contributors" />
           <Stat n={5} label="countries" />
           <Stat n={6} label="parts" />
-        </Reveal>
-
-        <Reveal as="h3" style={{ marginTop: '3.5rem' }}>Who the book is for</Reveal>
-        <Reveal className="audience">
-          {audience.map((a) => <div className="glass" key={a}>{a}</div>)}
         </Reveal>
 
         <Reveal className="ctas" style={{ display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2.5rem' }}>

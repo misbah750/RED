@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
+import MediaBand from '../components/MediaBand.jsx';
 import { contactTypes, CONTACT_EMAIL } from '../data.js';
 
 export default function ContactPage() {
@@ -23,6 +24,30 @@ export default function ContactPage() {
         For enquiries about the book, programs, institutional collaboration, media or speaking, send a message and the
         RED team will reply by email.
       </PageIntro>
+
+      <MediaBand
+        src="/band-ecg.jpg"
+        kicker="Let's build RED together"
+        caption="Invite RED. Collaborate. Bring it to your institution."
+        alt="Resuscitation imagery with an ECG trace"
+      />
+
+      <section aria-label="Buy the book">
+        <div className="wrap">
+          <Reveal className="buy-soon glass-2">
+            <span className="soon-badge"><span className="live-dot" /> Coming soon</span>
+            <h3>Buy the book</h3>
+            <p>Publisher and retailer links for <strong>Resuscitation in the Emergency Department (RED)</strong> go
+              live on 03 November 2026. Join the launch list and we will send you the order links the moment the book
+              is available.</p>
+            <div className="buy-soon-cts">
+              <span className="btn btn-red is-disabled" aria-disabled="true"><span>Buy now, coming soon</span></span>
+              <a className="btn btn-outline" href="#/events"><span>Get launch updates</span></a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section aria-label="Contact">
         <div className="wrap contact">
           <Reveal>

@@ -1,11 +1,10 @@
 import React from 'react';
 import Reveal, { Eyebrow } from '../components/Reveal.jsx';
+import MediaBand from '../components/MediaBand.jsx';
 import { asset } from '../assets.js';
 
-const badges = ['MBBS', 'FCPS, Emergency Medicine', 'PhD, Clinical Sciences', 'FHEA', 'Certified ED Executive'];
 const roles = [
-  { t: 'Associate Professor of Emergency Medicine', d: 'Aga Khan University Hospital' },
-  { t: 'Section Head, Adult Emergency Medicine', d: 'Aga Khan University Hospital' },
+  { t: 'Associate Professor of Emergency Medicine', d: 'Academic emergency medicine' },
   { t: 'General Secretary', d: 'Pakistan Society of Emergency Medicine' },
   { t: 'Fellow, Higher Education Academy', d: 'Medical education & teaching' },
 ];
@@ -29,19 +28,22 @@ export default function AuthorPage() {
             <div className="author-hero-copy">
               <Reveal><Eyebrow>About the author</Eyebrow></Reveal>
               <Reveal as="h1" id="au-title" delay={1}>Dr Shahan Waheed</Reveal>
-              <Reveal as="p" className="au-role" delay={2}>Associate Professor of Emergency Medicine · Section Head, Adult Emergency Medicine, Aga Khan University Hospital</Reveal>
-              <Reveal className="au-badges" delay={3}>
-                {badges.map((b) => <span key={b}>{b}</span>)}
-              </Reveal>
+              <Reveal as="p" className="au-role" delay={2}>Associate Professor of Emergency Medicine</Reveal>
               <Reveal as="p" className="au-bio" delay={3}>
-                Dr Shahan Waheed is an Associate Professor of Emergency Medicine at Aga Khan University Hospital and
-                serves as Section Head of Adult Emergency Medicine. He is a Fellow of the College of Physicians and
-                Surgeons Pakistan in Emergency Medicine, holds a PhD in Clinical Sciences, and is a Fellow of the
-                Higher Education Academy. He is also a Certified Emergency Department Executive and General Secretary
-                of the Pakistan Society of Emergency Medicine.
+                Dr Shahan Waheed is an Associate Professor of Emergency Medicine. He is a Fellow of the College of
+                Physicians and Surgeons Pakistan in Emergency Medicine, holds a PhD in Clinical Sciences, and is a
+                Fellow of the Higher Education Academy. He is also a Certified Emergency Department Executive and
+                General Secretary of the Pakistan Society of Emergency Medicine.
               </Reveal>
               <Reveal className="ctas" delay={4} style={{ display: 'flex', gap: '.8rem', flexWrap: 'wrap' }}>
                 <a className="btn btn-red" href="#/book"><span>Explore the book</span></a>
+                <a className="btn btn-linkedin" href="https://www.linkedin.com/in/shahan-waheed-mbbs-fcps-fhea-macadmed-cede-phd-b055ab71"
+                  target="_blank" rel="noopener noreferrer">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05C13.4 9.6 15 9 16.6 9 21 9 21 12 21 15.3V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9z" /></svg>
+                    Connect on LinkedIn
+                  </span>
+                </a>
                 <a className="btn btn-outline" href="#/contact"><span>Get in touch</span></a>
               </Reveal>
             </div>
@@ -63,6 +65,13 @@ export default function AuthorPage() {
           </div>
         </div>
       </section>
+
+      <MediaBand
+        src="/scene-monitor.jpg"
+        kicker="At the bedside"
+        caption="Experience distilled for the moment seconds matter."
+        alt="Emergency clinician managing a critically ill patient at the bedside"
+      />
 
       <section aria-labelledby="au-work-title">
         <div className="wrap why">
