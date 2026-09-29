@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../components/Hero.jsx';
-import Principles from '../components/Principles.jsx';
 import Newsletter from '../components/Newsletter.jsx';
 import PulseDivider from '../components/PulseDivider.jsx';
 import MediaBand from '../components/MediaBand.jsx';
@@ -44,8 +43,6 @@ export default function Home({ cd }) {
         caption="Science. Systems. Skills. When seconds matter."
         alt="Emergency resuscitation modalities: defibrillation, airway management, IV access, point-of-care ultrasound and monitoring"
       />
-
-      <Principles />
 
       <section aria-labelledby="bay-title">
         <div className="wrap">

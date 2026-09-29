@@ -36,7 +36,6 @@ export default function AuthorPage() {
                 General Secretary of the Pakistan Society of Emergency Medicine.
               </Reveal>
               <Reveal className="ctas" delay={4} style={{ display: 'flex', gap: '.8rem', flexWrap: 'wrap' }}>
-                <a className="btn btn-red" href="#/book"><span>Explore the book</span></a>
                 <a className="btn btn-linkedin" href="https://www.linkedin.com/in/shahan-waheed-mbbs-fcps-fhea-macadmed-cede-phd-b055ab71"
                   target="_blank" rel="noopener noreferrer">
                   <span>

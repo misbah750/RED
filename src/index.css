@@ -1962,3 +1962,34 @@ footer ul a:hover::after,.legal-links a:hover::after{transform:scaleX(1)}
 .btn-linkedin:hover{background:#0a66c2;border-color:#0a66c2;color:#fff;
   box-shadow:0 18px 40px -20px rgba(10,102,194,.7)}
 .btn-linkedin:hover svg{color:#fff}
+
+/* =================================================================
+   v30 — richer, more beautiful navbar animations
+   ================================================================= */
+/* soft red glow behind a hovered tab */
+.nav-pill .ni{transition:color .25s ease,transform .34s cubic-bezier(.22,1,.36,1),background .3s ease}
+.nav-pill .ni:hover{background:radial-gradient(120% 120% at 50% 38%,rgba(227,27,35,.16),transparent 70%);border-radius:16px}
+/* icon lifts + tilts a touch on hover */
+.nav-pill .ni .ni-ic{transition:transform .35s cubic-bezier(.22,1,.36,1),color .25s ease}
+.nav-pill .ni:hover .ni-ic{transform:translateY(-2px) scale(1.08)}
+
+/* active tab: icon pops in, label glows, dot pulses */
+.nav-pill .ni.active .ni-ic{animation:navIconPop .55s cubic-bezier(.22,1.5,.4,1)}
+@keyframes navIconPop{0%{transform:scale(.6)}55%{transform:scale(1.22)}100%{transform:scale(1)}}
+.nav-pill .ni.active .ni-lb{text-shadow:0 0 14px rgba(227,27,35,.65)}
+.nav-pill .ni.active .ni-dot{animation:beat 1.8s infinite}
+
+/* the red pod notch under the active tab breathes a soft glow */
+.pill-curve{animation:podGlow 2.6s ease-in-out infinite}
+@keyframes podGlow{
+  0%,100%{filter:drop-shadow(0 2px 7px rgba(227,27,35,.85))}
+  50%{filter:drop-shadow(0 3px 13px rgba(227,27,35,1))}
+}
+
+/* the whole pill breathes a very subtle edge glow */
+.nav.scrolled .nav-pill,.nav-pill{transition:filter .4s ease}
+
+@media (prefers-reduced-motion:reduce){
+  .nav-pill .ni.active .ni-ic,.nav-pill .ni.active .ni-dot,.pill-curve{animation:none}
+  .nav-pill .ni:hover .ni-ic{transform:none}
+}
