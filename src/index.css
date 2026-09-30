@@ -2053,3 +2053,12 @@ footer ul a:hover::after,.legal-links a:hover::after{transform:scaleX(1)}
   .reveal.rv-left,.reveal.rv-right{transform:translateY(30px)}
   .reveal.rv-left.in,.reveal.rv-right.in{transform:none}
 }
+
+/* =================================================================
+   v35 — launch bar wraps as one centred line on phones
+   ================================================================= */
+@media (max-width:560px){
+  .topbar{padding:.6rem 1rem;line-height:1.45}
+  .topbar-in{display:inline}
+  .tb-dot{display:inline-block;vertical-align:middle;margin:0 .45rem 2px 0}
+}

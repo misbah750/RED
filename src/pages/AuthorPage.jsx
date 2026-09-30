@@ -55,12 +55,6 @@ export default function AuthorPage() {
         alt="Emergency clinician managing a critically ill patient at the bedside"
       />
 
-      <section aria-label="Closing">
-        <div className="wrap">
-          <Reveal as="p" className="pull glass au-closing">RED distils that experience into a resource for clinicians who must
-            <span> act when seconds matter.</span></Reveal>
-        </div>
-      </section>
     </>
   );
 }

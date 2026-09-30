@@ -30,8 +30,8 @@ export default function CookieConsent() {
           </svg>
         </div>
         <p className="cookie-text">
-          We use essential cookies to make this site work and, with your consent, a few analytics cookies to
-          understand how RED is used. See our <a href="#/contact">cookie notice</a>.
+          RED does not use tracking or advertising cookies. If we add privacy-friendly analytics in future, it
+          will only run if you accept. Your choice is saved on this device. Questions? <a href="#/contact">Contact us</a>.
         </p>
         <div className="cookie-acts">
           <button className="btn btn-outline cookie-btn" onClick={() => choose('declined')}><span>Decline</span></button>
