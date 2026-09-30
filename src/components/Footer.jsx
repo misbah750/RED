@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
           <div><h4>Explore</h4><ul>
             <li><a href="#/book">The Book</a></li><li><a href="#/about">About RED</a></li>
-            <li><a href="#/forewords">Forewords</a></li><li><a href="#/collaborators">Collaborators</a></li><li><a href="#/author">Author</a></li></ul></div>
+            <li><a href="#/forewords">Forewords</a></li><li><a href="#/contributors">Contributors</a></li><li><a href="#/author">Author</a></li></ul></div>
           <div><h4>RED</h4><ul>
             <li><a href="#/program">Program</a></li><li><a href="#/events">Events</a></li>
             <li><a href="#/contact">Contact</a></li><li><a href={`mailto:${CONTACT_EMAIL}`}>Media enquiries</a></li></ul></div>

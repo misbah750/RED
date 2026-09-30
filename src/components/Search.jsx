@@ -8,7 +8,7 @@ function buildIndex() {
   parts.forEach((p) => p.c.forEach((c) => idx.push({ label: c, group: 'Chapters', href: '#/book', sub: p.t })));
   programs.forEach((p) => idx.push({ label: p.t, group: 'Programs', href: '#/program' }));
   praise.forEach((p) => idx.push({ label: p.by, group: 'Forewords', href: '#/forewords' }));
-  countries.forEach((c) => idx.push({ label: c.n, group: 'Collaborators', href: '#/collaborators' }));
+  countries.forEach((c) => idx.push({ label: c.n, group: 'Contributors', href: '#/contributors' }));
   return idx;
 }
 

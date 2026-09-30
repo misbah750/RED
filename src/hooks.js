@@ -130,13 +130,17 @@ export function useScrolledPast(px = 600) {
   return past;
 }
 
+// Renamed pages: old addresses keep working and highlight the right nav tab.
+const ROUTE_ALIASES = { '/collaborators': '/contributors' };
+
 // Hash router: returns the current route path (e.g. "/about"); "/" by default.
 export function useRoute() {
   const parse = () => {
     let h = (typeof window !== 'undefined' ? window.location.hash : '') || '';
     h = h.replace(/^#/, '');
     if (!h || h === '/' || h === '/home') return '/';
-    return h.split('?')[0];
+    const p = h.split('?')[0];
+    return ROUTE_ALIASES[p] || p;
   };
   const [route, setRoute] = useState(parse());
   useEffect(() => {

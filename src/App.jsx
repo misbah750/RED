@@ -24,7 +24,7 @@ export default function App() {
   switch (route) {
     case '/about': page = <AboutPage />; break;
     case '/forewords': page = <Forewords />; break;
-    case '/collaborators': page = <Collaborators />; break;
+    case '/contributors': page = <Collaborators />; break;
     case '/book': page = <BookPage launched={launched} />; break;
     case '/program': page = <Program />; break;
     case '/events': page = <Events cd={cd} launched={launched} />; break;

@@ -8,7 +8,7 @@ export const nav = [
   { r: '/about', label: 'About RED', icon: ['M22 12h-4l-3 8L9 4l-3 8H2'] },
   { r: '/author', label: 'Author', icon: ['M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z', 'M4.5 21a7.5 7.5 0 0 1 15 0'] },
   { r: '/forewords', label: 'Forewords', icon: ['M21 15a3 3 0 0 1-3 3H8l-5 3V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3z'] },
-  { r: '/collaborators', label: 'Collaborators', icon: ['M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z', 'M3.5 12h17', 'M12 3c2.6 2.5 2.6 15.5 0 18M12 3c-2.6 2.5-2.6 15.5 0 18'] },
+  { r: '/contributors', label: 'Contributors', icon: ['M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z', 'M3.5 12h17', 'M12 3c2.6 2.5 2.6 15.5 0 18M12 3c-2.6 2.5-2.6 15.5 0 18'] },
   { r: '/book', label: 'The Book', icon: ['M12 6c-2-1.4-5-1.4-8 0v12c3-1.4 6-1.4 8 0 2-1.4 5-1.4 8 0V6c-3-1.4-6-1.4-8 0z', 'M12 6v12'] },
   { r: '/program', label: 'Program', icon: ['M3 9l9-4 9 4-9 4z', 'M7 11v4c0 1.2 2.2 2.2 5 2.2s5-1 5-2.2v-4'] },
   { r: '/events', label: 'Events', icon: ['M4 5h16v16H4z', 'M4 9.5h16', 'M8.5 3v4', 'M15.5 3v4'] },

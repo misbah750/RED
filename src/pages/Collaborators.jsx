@@ -14,7 +14,7 @@ function Stat({ n, label }) {
 export default function Collaborators() {
   return (
     <>
-      <PageIntro eyebrow="Collaborators" title={<>Global knowledge. <em>Local reality.</em></>}>
+      <PageIntro eyebrow="Contributors" title={<>Global knowledge. <em>Local reality.</em></>}>
         The principles of resuscitation are universal. The environments in which clinicians deliver them are not.
         RED has been developed with particular recognition of the realities faced by clinicians working where
         intensive-care capacity, diagnostics, monitoring, medications, equipment or specialist availability may be constrained.

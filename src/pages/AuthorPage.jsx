@@ -3,13 +3,6 @@ import Reveal, { Eyebrow } from '../components/Reveal.jsx';
 import MediaBand from '../components/MediaBand.jsx';
 import { asset } from '../assets.js';
 
-const roles = [
-  { t: 'Associate Professor Emergency Medicine', d: 'Academic emergency medicine' },
-  { t: 'General Secretary', d: 'Pakistan Society of Emergency Medicine' },
-  { t: 'Fellow, Higher Education Academy', d: 'Medical education & teaching' },
-];
-const focus = ['Emergency care', 'Resuscitation', 'Clinical leadership', 'Medical education', 'Research', 'Healthcare-systems improvement'];
-
 export default function AuthorPage() {
   return (
     <>
@@ -62,27 +55,8 @@ export default function AuthorPage() {
         alt="Emergency clinician managing a critically ill patient at the bedside"
       />
 
-      <section aria-label="Focus areas">
+      <section aria-label="Closing">
         <div className="wrap">
-          <Reveal className="au-focus glass-2">
-            <h3>Areas of focus</h3>
-            <ul className="chips">{focus.map((f) => <li key={f}>{f}</li>)}</ul>
-          </Reveal>
-        </div>
-      </section>
-
-      <section aria-label="Roles">
-        <div className="wrap">
-          <Reveal as="h2" className="areas-h">Roles &amp; appointments</Reveal>
-          <div className="au-roles">
-            {roles.map((r, i) => (
-              <Reveal className="au-role-card glass" delay={(i % 4) + 1} key={r.t}>
-                <span className="au-role-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" /><path d="M9 12l2 2 4-4" /></svg></span>
-                <h3>{r.t}</h3>
-                <p>{r.d}</p>
-              </Reveal>
-            ))}
-          </div>
           <Reveal as="p" className="pull glass au-closing">RED distils that experience into a resource for clinicians who must
             <span> act when seconds matter.</span></Reveal>
         </div>
