@@ -5,7 +5,6 @@ import PulseDivider from '../components/PulseDivider.jsx';
 import MediaBand from '../components/MediaBand.jsx';
 import Scene from '../components/Scene.jsx';
 import Reveal, { Eyebrow } from '../components/Reveal.jsx';
-import { questions } from '../data.js';
 
 export default function Home({ cd }) {
   return (
@@ -61,28 +60,6 @@ export default function Home({ cd }) {
       </section>
 
       <PulseDivider />
-
-      <section aria-labelledby="certainty-title">
-        <span className="aurora a2" style={{ left: '-6%', top: '20%' }} aria-hidden="true" />
-        <div className="wrap">
-          <Reveal className="sec-head">
-            <Eyebrow>When certainty can wait, but action cannot</Eyebrow>
-            <h2 id="certainty-title">A different way to think about the critically ill patient.</h2>
-            <p>Resuscitation is inherently physiology-driven. Whether the underlying problem is trauma, sepsis,
-              poisoning, asthma, cardiogenic shock or obstetric hemorrhage, the immediate goal is similar: preserve
-              oxygen delivery, maintain perfusion, prevent irreversible cellular injury, and buy time for definitive
-              treatment. RED encourages clinicians to look beyond diagnostic labels and ask:</p>
-          </Reveal>
-          <div className="qgrid">
-            {questions.map((q, i) => (
-              <Reveal className="qcard glass" delay={(i % 4) + 1} key={q}>
-                <span className="qnum">{String(i + 1).padStart(2, '0')}</span>
-                <p>{q}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section aria-label="From the editor of RED">
         <div className="wrap">

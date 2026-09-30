@@ -4,7 +4,7 @@ import MediaBand from '../components/MediaBand.jsx';
 import { asset } from '../assets.js';
 
 const roles = [
-  { t: 'Associate Professor of Emergency Medicine', d: 'Academic emergency medicine' },
+  { t: 'Associate Professor Emergency Medicine', d: 'Academic emergency medicine' },
   { t: 'General Secretary', d: 'Pakistan Society of Emergency Medicine' },
   { t: 'Fellow, Higher Education Academy', d: 'Medical education & teaching' },
 ];
@@ -28,12 +28,17 @@ export default function AuthorPage() {
             <div className="author-hero-copy">
               <Reveal><Eyebrow>About the author</Eyebrow></Reveal>
               <Reveal as="h1" id="au-title" delay={1}>Dr Shahan Waheed</Reveal>
-              <Reveal as="p" className="au-role" delay={2}>Associate Professor of Emergency Medicine</Reveal>
               <Reveal as="p" className="au-bio" delay={3}>
-                Dr Shahan Waheed is an Associate Professor of Emergency Medicine. He is a Fellow of the College of
+                Dr Shahan Waheed is an Associate Professor Emergency Medicine. He is a Fellow of the College of
                 Physicians and Surgeons Pakistan in Emergency Medicine, holds a PhD in Clinical Sciences, and is a
                 Fellow of the Higher Education Academy. He is also a Certified Emergency Department Executive and
                 General Secretary of the Pakistan Society of Emergency Medicine.
+              </Reveal>
+              <Reveal as="p" className="au-bio" delay={3}>
+                His academic and professional work spans emergency care, resuscitation, clinical leadership, medical
+                education, research and healthcare-systems improvement. He has authored numerous peer-reviewed
+                publications, books, chapters and educational resources, and has received several teaching awards,
+                fellowships, and intramural and extramural research grants.
               </Reveal>
               <Reveal className="ctas" delay={4} style={{ display: 'flex', gap: '.8rem', flexWrap: 'wrap' }}>
                 <a className="btn btn-linkedin" href="https://www.linkedin.com/in/shahan-waheed-mbbs-fcps-fhea-macadmed-cede-phd-b055ab71"
@@ -50,6 +55,22 @@ export default function AuthorPage() {
         </div>
       </section>
 
+      <MediaBand
+        src="/scene-monitor.jpg"
+        kicker="At the bedside"
+        caption="Experience distilled into a practical guide."
+        alt="Emergency clinician managing a critically ill patient at the bedside"
+      />
+
+      <section aria-label="Focus areas">
+        <div className="wrap">
+          <Reveal className="au-focus glass-2">
+            <h3>Areas of focus</h3>
+            <ul className="chips">{focus.map((f) => <li key={f}>{f}</li>)}</ul>
+          </Reveal>
+        </div>
+      </section>
+
       <section aria-label="Roles">
         <div className="wrap">
           <Reveal as="h2" className="areas-h">Roles &amp; appointments</Reveal>
@@ -62,36 +83,8 @@ export default function AuthorPage() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <MediaBand
-        src="/scene-monitor.jpg"
-        kicker="At the bedside"
-        caption="Experience distilled for the moment seconds matter."
-        alt="Emergency clinician managing a critically ill patient at the bedside"
-      />
-
-      <section aria-labelledby="au-work-title">
-        <div className="wrap why">
-          <h2 id="au-work-title">A career across care, education <em>and research.</em></h2>
-          <div>
-            <p>His academic and professional work spans emergency care, resuscitation, clinical leadership, medical
-              education, research and healthcare-systems improvement. He has authored numerous peer-reviewed
-              publications, books, chapters and educational resources, and has received several teaching awards,
-              fellowships, and intramural and extramural research grants.</p>
-            <p className="pull glass">RED distils that experience into a resource for clinicians who must
-              <span> act when seconds matter.</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-label="Focus areas">
-        <div className="wrap">
-          <Reveal className="au-focus glass-2">
-            <h3>Areas of focus</h3>
-            <ul className="chips">{focus.map((f) => <li key={f}>{f}</li>)}</ul>
-          </Reveal>
+          <Reveal as="p" className="pull glass au-closing">RED distils that experience into a resource for clinicians who must
+            <span> act when seconds matter.</span></Reveal>
         </div>
       </section>
     </>

@@ -17,8 +17,8 @@ export default function OrderBook({ launched }) {
             <div className="order-cts">
               {launched
                 ? retailers.map((r) => (
-                    <a key={r.name} className={`btn ${r.href && r.href !== '#contact' ? 'btn-red' : 'btn-outline'}`}
-                       href={r.href || '#contact'}><span>{r.name}</span></a>
+                    <a key={r.name} className={`btn ${r.href && r.href !== '#/contact' ? 'btn-red' : 'btn-outline'}`}
+                       href={r.href || '#/contact'}><span>{r.name}</span></a>
                   ))
                 : (<>
                     <a className="btn btn-red" href="#/events"><span>Get launch updates</span></a>

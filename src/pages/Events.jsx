@@ -17,7 +17,7 @@ export default function Events({ cd, launched }) {
       <MediaBand
         src="/scene-corridor.jpg"
         kicker="The first RED event"
-        caption="When seconds matter, preparation becomes survival."
+        caption="Preparation becomes survival."
         alt="Emergency team rushing a patient on a stretcher through a hospital corridor"
       />
 
@@ -36,8 +36,11 @@ export default function Events({ cd, launched }) {
               {!launched && <Countdown cd={cd} className="cd-compact" />}
             </div>
             <div className="acts">
-              <a className="btn btn-red" href="#join"><span>Get launch updates</span></a>
-              <a className="btn btn-glass" target="_blank" rel="noopener" href={CAL}><span>Add to calendar</span></a>
+              <a className="btn btn-red" href="#/events"
+                onClick={(e) => { e.preventDefault(); document.getElementById('join')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+                <span>Get launch updates</span>
+              </a>
+              <a className="btn btn-glass" target="_blank" rel="noopener noreferrer" href={CAL}><span>Add to calendar</span></a>
             </div>
           </Reveal>
           <Reveal as="p" className="note">More events, including workshops, seminars and webinars, will appear here. Past events will show highlights and recordings.</Reveal>

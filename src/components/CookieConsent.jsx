@@ -31,7 +31,7 @@ export default function CookieConsent() {
         </div>
         <p className="cookie-text">
           We use essential cookies to make this site work and, with your consent, a few analytics cookies to
-          understand how RED is used. See our <a href="#contact">cookie notice</a>.
+          understand how RED is used. See our <a href="#/contact">cookie notice</a>.
         </p>
         <div className="cookie-acts">
           <button className="btn btn-outline cookie-btn" onClick={() => choose('declined')}><span>Decline</span></button>

@@ -11,7 +11,21 @@ export default function Hero({ cd }) {
   const pointer = useRef(null);
   const mediaRef = useRef(null);
   const videoRef = useRef(null);
+  const bookRef = useRef(null);
   const reduced = usePrefersReducedMotion();
+
+  // Gentle scroll parallax: the book drifts a little as the page scrolls.
+  useEffect(() => {
+    if (reduced) return;
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      const shift = Math.min(y * 0.14, 90);
+      if (bookRef.current) bookRef.current.style.transform = `translate3d(0, ${shift}px, 0)`;
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [reduced]);
 
   // Keep the background video playing (browsers pause it when the tab is hidden).
   useEffect(() => {
@@ -73,7 +87,9 @@ export default function Hero({ cd }) {
         </header>
 
         <div className="hero-orbit anim d4">
-          <Book3D pointer={pointer} />
+          <div className="hero-book" ref={bookRef}>
+            <Book3D pointer={pointer} />
+          </div>
         </div>
 
         <div className="hero-actions anim d5">
