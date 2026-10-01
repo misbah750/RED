@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="legal">
           <span>© 2026 RED, Resuscitation in the Emergency Department. First edition published by Paramount Books (Pvt.) Ltd.</span>
           <nav className="legal-links" aria-label="Legal">
-            <a href="#/contact">Privacy Policy</a><a href="#/contact">Terms of Use</a>
+            <a href="#/privacy">Privacy Policy</a><a href="#/terms">Terms of Use</a>
             <button type="button" className="legal-link-btn"
               onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}>Cookie preferences</button>
             <a href="#/contact">Report a correction</a>

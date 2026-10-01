@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from './Reveal.jsx';
 import VideoBackdrop from './VideoBackdrop.jsx';
+import { CONTACT_EMAIL } from '../data.js';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -10,9 +11,12 @@ export default function Newsletter() {
     e.preventDefault();
     if (!/^\S+@\S+\.\S+$/.test(email)) { setMsg('Enter a valid email address, like name@hospital.org.'); return; }
     if (!consent) { setMsg('Tick the consent box to receive updates.'); return; }
-    // TODO: connect to your mailing platform (double opt-in) before launch.
-    setMsg('You are on the list. We will email you launch updates.');
-    setEmail(''); setConsent(false);
+    // No mailing service yet: open the visitor's email app with a ready-to-send sign-up to the RED inbox.
+    const subject = encodeURIComponent('Subscribe me to RED updates');
+    const body = encodeURIComponent(`Please add this address to the RED updates list:\n\n${email}\n\n`
+      + 'I agree to receive RED updates by email and understand I can unsubscribe at any time.');
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setMsg('Opening your email app. Press Send to join the RED updates list.');
   };
   return (
     <section id="join" aria-labelledby="join-title">
@@ -32,7 +36,8 @@ export default function Newsletter() {
             </div>
             <label className="check">
               <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required />
-              I agree to receive RED updates by email. I can unsubscribe at any time.
+              <span>I agree to receive RED updates by email. I can unsubscribe at any time. See our{" "}
+                <a href="#/privacy">privacy policy</a>.</span>
             </label>
             <button className="btn btn-red" type="submit">Join RED updates</button>
             <p className="msg" role="status">{msg}</p>

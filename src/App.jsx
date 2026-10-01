@@ -13,6 +13,8 @@ import Program from './pages/Program.jsx';
 import Events from './pages/Events.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import AuthorPage from './pages/AuthorPage.jsx';
+import PrivacyPage from './pages/PrivacyPage.jsx';
+import TermsPage from './pages/TermsPage.jsx';
 import { LAUNCH_ISO } from './data.js';
 import { useLaunchState, useRoute } from './hooks.js';
 
@@ -30,6 +32,8 @@ export default function App() {
     case '/events': page = <Events cd={cd} launched={launched} />; break;
     case '/contact': page = <ContactPage />; break;
     case '/author': page = <AuthorPage />; break;
+    case '/privacy': page = <PrivacyPage />; break;
+    case '/terms': page = <TermsPage />; break;
     default: page = <Home cd={cd} />;
   }
 

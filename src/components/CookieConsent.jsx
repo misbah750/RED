@@ -31,7 +31,7 @@ export default function CookieConsent() {
         </div>
         <p className="cookie-text">
           RED does not use tracking or advertising cookies. If we add privacy-friendly analytics in future, it
-          will only run if you accept. Your choice is saved on this device. Questions? <a href="#/contact">Contact us</a>.
+          will only run if you accept. Your choice is saved on this device. Read our <a href="#/privacy">privacy policy</a>.
         </p>
         <div className="cookie-acts">
           <button className="btn btn-outline cookie-btn" onClick={() => choose('declined')}><span>Decline</span></button>

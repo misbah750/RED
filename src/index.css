@@ -2062,3 +2062,18 @@ footer ul a:hover::after,.legal-links a:hover::after{transform:scaleX(1)}
   .topbar-in{display:inline}
   .tb-dot{display:inline-block;vertical-align:middle;margin:0 .45rem 2px 0}
 }
+
+/* =================================================================
+   v36 — Privacy Policy & Terms of Use pages, inline text links
+   ================================================================= */
+.policy{max-width:46rem}
+.policy h2{font:800 clamp(1.25rem,2.4vw,1.55rem)/1.25 var(--f-display);letter-spacing:-.015em;
+  color:#fff;margin:2.6rem 0 .8rem}
+.policy h2:first-child{margin-top:0}
+.policy p,.policy li{color:var(--muted);font-size:1.02rem;line-height:1.75}
+.policy p+p{margin-top:.9rem}
+.policy ul{list-style:none;margin:.9rem 0 0;padding:0;display:grid;gap:.9rem}
+.policy strong{color:var(--text)}
+.policy a,.check a{color:#ff7a80;text-decoration:underline;text-underline-offset:3px}
+.policy a:hover,.check a:hover{color:#fff}
+.policy a{overflow-wrap:anywhere}

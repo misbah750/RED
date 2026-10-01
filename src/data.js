@@ -119,7 +119,7 @@ export const contactTypes = [
   'General enquiry', 'Program or workshop invitation', 'Institutional collaboration',
   'Media or interview request', 'Book purchase or bulk order', 'Speaker or seminar request',
 ];
-export const CONTACT_EMAIL = 'resuscitationed@gmail.com';
+export const CONTACT_EMAIL = 'info@resuscitationemergencydepartment.org';
 
 export const audience = [
   'Emergency physicians and residents',
