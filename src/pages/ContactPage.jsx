@@ -1,22 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
 import MediaBand from '../components/MediaBand.jsx';
 import { contactTypes, CONTACT_EMAIL } from '../data.js';
+import { sendForm, secondsSince } from '../sendForm.js';
+
+const EMPTY = { name: '', email: '', type: contactTypes[0], message: '' };
 
 export default function ContactPage() {
-  const [f, setF] = useState({ name: '', email: '', type: contactTypes[0], message: '' });
-  const [msg, setMsg] = useState('');
+  const [f, setF] = useState(EMPTY);
+  const [hp, setHp] = useState('');
+  const [msg, setMsg] = useState({ text: '', error: false });
+  const [sending, setSending] = useState(false);
+  const started = useRef(Date.now());
   const up = (k) => (e) => setF({ ...f, [k]: e.target.value });
-  const submit = (e) => {
+  const say = (text, error = true) => setMsg({ text, error });
+  const submit = async (e) => {
     e.preventDefault();
-    if (!f.name.trim()) return setMsg('Add your name.');
-    if (!/^\S+@\S+\.\S+$/.test(f.email)) return setMsg('Enter a valid email address.');
-    if (!f.message.trim()) return setMsg('Add a short message.');
-    const subject = encodeURIComponent(`RED enquiry, ${f.type}`);
-    const body = encodeURIComponent(`Name: ${f.name}\nEmail: ${f.email}\nType: ${f.type}\n\n${f.message}`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setMsg('Opening your email app to send to the RED team…');
+    if (sending) return;
+    if (!f.name.trim()) return say('Add your name.');
+    if (!/^\S+@\S+\.\S+$/.test(f.email)) return say('Enter a valid email address.');
+    if (!f.message.trim()) return say('Add a short message.');
+    setSending(true);
+    say('Sending your message…', false);
+    const r = await sendForm({ kind: 'contact', ...f, website: hp, t: secondsSince(started.current) });
+    setSending(false);
+    if (r.ok) {
+      setF(EMPTY);
+      say('Thank you. Your message has been sent and the RED team will reply by email.', false);
+    } else {
+      say(r.error || `Sorry, your message could not be sent. Please email us at ${CONTACT_EMAIL}.`);
+    }
   };
   return (
     <>
@@ -65,9 +79,14 @@ export default function ContactPage() {
             </div>
             <div className="field"><label htmlFor="cType">Enquiry type</label>
               <select id="cType" value={f.type} onChange={up('type')}>{contactTypes.map((t) => <option key={t}>{t}</option>)}</select></div>
-            <div className="field"><label htmlFor="cMsg">Message</label><textarea id="cMsg" value={f.message} onChange={up('message')} required /></div>
-            <button className="btn btn-red" type="submit"><span>Send message</span></button>
-            <p className="msg" role="status">{msg}</p>
+            <div className="field"><label htmlFor="cMsg">Message</label><textarea id="cMsg" value={f.message} onChange={up('message')} maxLength={5000} required /></div>
+            {/* spam trap: hidden from people, bots fill it in */}
+            <div className="hp" aria-hidden="true">
+              <label htmlFor="cWebsite">Website</label>
+              <input id="cWebsite" name="website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} />
+            </div>
+            <button className="btn btn-red" type="submit" disabled={sending}><span>{sending ? 'Sending…' : 'Send message'}</span></button>
+            <p className={`msg${msg.error ? ' is-error' : ''}`} role="status">{msg.text}</p>
           </Reveal>
         </div>
       </section>

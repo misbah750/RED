@@ -2077,3 +2077,10 @@ footer ul a:hover::after,.legal-links a:hover::after{transform:scaleX(1)}
 .policy a,.check a{color:#ff7a80;text-decoration:underline;text-underline-offset:3px}
 .policy a:hover,.check a:hover{color:#fff}
 .policy a{overflow-wrap:anywhere}
+
+/* ======================
+   v37 · Form sending states
+   ====================== */
+.msg.is-error{color:#ff8a8f}
+.btn:disabled{opacity:.6;cursor:progress}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}

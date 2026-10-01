@@ -27,7 +27,7 @@ export default function PrivacyPage() {
                 choice is saved in your own browser (local storage) so the message does not appear again. It is not
                 sent to us. You can change it at any time with the “Cookie preferences” link at the bottom of every
                 page, or remove it by clearing your browser’s site data.</li>
-              <li><strong>Hosting.</strong> The website is hosted by Vercel. Like any web host, Vercel processes
+              <li><strong>Hosting.</strong> The website is hosted by Namecheap. Like any web host, Namecheap processes
                 standard technical information such as your IP address and browser type in order to deliver pages
                 and protect the service from abuse.</li>
               <li><strong>Fonts.</strong> The website’s typefaces are loaded from Google Fonts. When they load, your
@@ -36,15 +36,16 @@ export default function PrivacyPage() {
 
             <h2>Information you choose to send us</h2>
             <ul>
-              <li><strong>Contact form.</strong> The form opens your own email app with your message ready to send.
-                Nothing is sent until you press Send. We receive your name, email address and message, and use them
-                only to reply to you.</li>
-              <li><strong>RED updates.</strong> Joining the updates list also opens your email app with a short
-                sign-up email. Once you send it, we use your email address only to send RED news, such as the book
-                launch, programs and events. You can unsubscribe at any time by emailing {mail}.</li>
+              <li><strong>Contact form.</strong> When you press Send, your name, email address, enquiry type and
+                message are emailed to the RED inbox. We use them only to reply to you.</li>
+              <li><strong>RED updates.</strong> When you join the updates list, your email address is emailed to the
+                RED inbox. We use it only to send RED news, such as the book launch, programs and events. You can
+                unsubscribe at any time by emailing {mail}.</li>
             </ul>
-            <p>These emails are received through our email provider. If we later move the updates list to a
-              mailing service, we will update this policy first.</p>
+            <p>Form submissions are delivered as email from our web host to our inbox. They are not saved in a
+              database on the website. To block spam, our server keeps a scrambled (hashed) form of your IP address
+              for a short time after you send a form. If we later move the updates list to a mailing service, we
+              will update this policy first.</p>
 
             <h2>How long we keep it</h2>
             <p>We keep enquiry emails for as long as needed to respond and follow up, and keep your address on the
