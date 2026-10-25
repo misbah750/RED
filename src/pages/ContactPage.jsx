@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PageIntro from '../components/PageIntro.jsx';
 import Reveal from '../components/Reveal.jsx';
 import MediaBand from '../components/MediaBand.jsx';
-import { contactTypes, CONTACT_EMAIL } from '../data.js';
+import { contactTypes, CONTACT_EMAIL, BUY_URL, EXTERNAL } from '../data.js';
 import { sendForm, secondsSince } from '../sendForm.js';
 
 const EMPTY = { name: '', email: '', type: contactTypes[0], message: '' };
@@ -49,13 +49,13 @@ export default function ContactPage() {
       <section aria-label="Buy the book">
         <div className="wrap">
           <Reveal className="buy-soon glass-2">
-            <span className="soon-badge"><span className="live-dot" /> Coming soon</span>
+            <span className="soon-badge"><span className="live-dot" /> Available now</span>
             <h3>Buy the book</h3>
-            <p>Publisher and retailer links for <strong>Resuscitation in the Emergency Department (RED)</strong> go
-              live on 03 November 2026. Join the launch list and we will send you the order links the moment the book
-              is available.</p>
+            <p><strong>Resuscitation in the Emergency Department (RED)</strong> is available now from the publisher,
+              Paramount Books. Order your copy online, or use the form below for institutional and bulk orders.</p>
             <div className="buy-soon-cts">
-              <span className="btn btn-red is-disabled" aria-disabled="true"><span>Buy now, coming soon</span></span>
+              <a className="btn btn-red" href={BUY_URL} {...EXTERNAL}>
+                <span>Buy now</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span></a>
               <a className="btn btn-outline" href="#/events"><span>Get launch updates</span></a>
             </div>
           </Reveal>

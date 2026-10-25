@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { nav } from '../data.js';
+import { nav, BUY_URL, EXTERNAL } from '../data.js';
 import Search from './Search.jsx';
 import Magnetic from './Magnetic.jsx';
 
@@ -33,7 +33,7 @@ function podCurve(h, cx, half) {
     + `C ${cx - half},${h + d} ${cx - half},${h} ${cx - half - c},${h}`;
 }
 
-export default function Nav({ route, launched }) {
+export default function Nav({ route }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -43,7 +43,6 @@ export default function Nav({ route, launched }) {
   const dimsRef = useRef({ w: 0, h: 0 });
   const posRef = useRef({ cx: null, half: 40 });
   const rafRef = useRef(0);
-  const cta = launched ? { label: 'Get the book', href: '#/book' } : { label: 'Get launch updates', href: '#/events' };
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 24);
@@ -133,7 +132,8 @@ export default function Nav({ route, launched }) {
 
           <div className="nav-right">
             <Search />
-            <Magnetic className="btn btn-red hdr-cta" strength={0.35} href={cta.href}><span>{cta.label}</span></Magnetic>
+            <Magnetic className="btn btn-red hdr-cta" strength={0.35} href={BUY_URL} {...EXTERNAL}>
+              <span>Buy the book</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span></Magnetic>
             <button className="menu-btn" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
             </button>
@@ -151,7 +151,8 @@ export default function Nav({ route, launched }) {
             <span className="mm-ic"><Icon paths={n.icon} /></span>{n.label}
           </a>
         ))}
-        <a className="btn btn-red" href={cta.href} onClick={() => setOpen(false)}><span>{cta.label}</span></a>
+        <a className="btn btn-red" href={BUY_URL} {...EXTERNAL} onClick={() => setOpen(false)}>
+          <span>Buy the book</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span></a>
       </div>
     </header>
   );

@@ -5,8 +5,9 @@ import Book3D from '../components/Book3D.jsx';
 import InsideBook from '../components/InsideBook.jsx';
 import OrderBook from '../components/OrderBook.jsx';
 import MediaBand from '../components/MediaBand.jsx';
+import { BUY_URL, EXTERNAL } from '../data.js';
 
-export default function BookPage({ launched }) {
+export default function BookPage() {
   const pointer = useRef(null);
   return (
     <>
@@ -31,7 +32,8 @@ export default function BookPage({ launched }) {
               <div><dt>Chapters</dt><dd>44 across 6 parts</dd></div>
             </dl>
             <div className="ctas" style={{ display: 'flex', gap: '.8rem', flexWrap: 'wrap' }}>
-              <a className="btn btn-red" href="#/events"><span>{launched ? 'Get the book' : 'Book launch 2026'}</span></a>
+              <a className="btn btn-red" href={BUY_URL} {...EXTERNAL}>
+                <span>Buy the book</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span></a>
               <a className="btn btn-outline" href="#/contact"><span>Institutional / bulk orders</span></a>
             </div>
           </Reveal>
@@ -47,7 +49,7 @@ export default function BookPage({ launched }) {
       />
 
       <InsideBook />
-      <OrderBook launched={launched} />
+      <OrderBook />
     </>
   );
 }

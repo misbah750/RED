@@ -15,7 +15,7 @@ import ContactPage from './pages/ContactPage.jsx';
 import AuthorPage from './pages/AuthorPage.jsx';
 import PrivacyPage from './pages/PrivacyPage.jsx';
 import TermsPage from './pages/TermsPage.jsx';
-import { LAUNCH_ISO } from './data.js';
+import { LAUNCH_ISO, BUY_URL, EXTERNAL } from './data.js';
 import { useLaunchState, useRoute } from './hooks.js';
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
     case '/about': page = <AboutPage />; break;
     case '/forewords': page = <Forewords />; break;
     case '/contributors': page = <Collaborators />; break;
-    case '/book': page = <BookPage launched={launched} />; break;
+    case '/book': page = <BookPage />; break;
     case '/program': page = <Program />; break;
     case '/events': page = <Events cd={cd} launched={launched} />; break;
     case '/contact': page = <ContactPage />; break;
@@ -47,10 +47,13 @@ export default function App() {
           <span className="tb-dot" aria-hidden="true" />
           {launched
             ? <><b>Now available</b> · Resuscitation in the Emergency Department</>
-            : <><b>Launching soon</b> · Book launch 03 November 2026</>}
+            : <><b>Available now</b> · Book launch 03 November 2026</>}
+          <a className="tb-buy" href={BUY_URL} {...EXTERNAL}>
+            Buy the book<span aria-hidden="true"> →</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span>
+          </a>
         </span>
       </div>
-      <Nav route={route} launched={launched} />
+      <Nav route={route} />
       <main id="top"><div className="route-view" key={route}>{page}</div></main>
       <Footer />
       <BackToTop />

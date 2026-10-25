@@ -1,6 +1,8 @@
 // ---------- RED site content model ----------
 export const LAUNCH_ISO = '2026-11-03T00:00:00+05:00';
-export const BUY_URL = '#/book';
+// The book's page on the publisher's online shop. Every "Buy" button points here and opens in a new tab.
+export const BUY_URL = 'https://paramountbooks.com.pk/products/resuscitation-in-the-emergency-department-red-9786273107318';
+export const EXTERNAL = { target: '_blank', rel: 'noopener' };
 
 // route-based nav (hash routing)
 export const nav = [
@@ -129,7 +131,6 @@ export const audience = [
   'Clinicians in high-resource and resource-constrained settings',
 ];
 export const retailers = [
-  { name: 'Paramount Books', href: '' },
-  { name: 'Order online', href: '' },
-  { name: 'Institutional / bulk', href: '#/contact' },
+  { name: 'Buy from Paramount Books', href: BUY_URL },
+  { name: 'Institutional / bulk orders', href: '#/contact' },
 ];

@@ -2084,3 +2084,10 @@ footer ul a:hover::after,.legal-links a:hover::after{transform:scaleX(1)}
 .msg.is-error{color:#ff8a8f}
 .btn:disabled{opacity:.6;cursor:progress}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+
+/* ======================
+   v38 · Buy link in the launch bar
+   ====================== */
+.tb-buy{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.tb-buy:hover,.tb-buy:focus-visible{text-decoration-thickness:2px}
+@media (max-width:560px){.tb-buy{margin-left:.45rem}}

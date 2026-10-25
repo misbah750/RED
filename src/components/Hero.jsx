@@ -1,6 +1,7 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import Book3D from './Book3D.jsx';
 import Magnetic from './Magnetic.jsx';
+import { BUY_URL, EXTERNAL } from '../data.js';
 import Countdown from './Countdown.jsx';
 import { usePrefersReducedMotion } from '../hooks.js';
 
@@ -94,8 +95,9 @@ export default function Hero({ cd }) {
 
         <div className="hero-actions anim d5">
           <div className="ctas">
-            <Magnetic className="btn btn-red" href="#/book"><span>Discover the book</span></Magnetic>
-            <Magnetic className="btn btn-glass" href="#/events"><span>Book launch 2026</span></Magnetic>
+            <Magnetic className="btn btn-red" href={BUY_URL} {...EXTERNAL}>
+              <span>Buy the book</span><span className="sr-only"> (opens the publisher's shop in a new tab)</span></Magnetic>
+            <Magnetic className="btn btn-glass" href="#/book"><span>Discover the book</span></Magnetic>
           </div>
           <div className="cd-wrap">
             <p className="cd-label"><span className="live-dot" /> Counting down to launch · 03 November 2026</p>
